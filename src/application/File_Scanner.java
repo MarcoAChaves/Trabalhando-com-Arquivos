@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Program {
+public class File_Scanner {
 
     public static void main(String[] args) {
 
