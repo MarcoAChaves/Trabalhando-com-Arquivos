@@ -9,12 +9,15 @@ public class FileReader_BufferedReader {
     public static void main(String[] args) {
 
         String path = "C:\\Temp\\in.txt";
-        FileReader fr = null;
-        BufferedReader br = null;
+        //Implementando bloco try-with-resources
 
-        try {
-            fr = new FileReader(path);
-            br = new BufferedReader(fr);
+        //FileReader fr = null;
+        //BufferedReader br = null;
+
+        //instanciando as Strings direto no bloco try!!!
+        try (BufferedReader br = new BufferedReader(new FileReader(path))){
+            //fr = new FileReader(path);
+            //br = new BufferedReader(fr);
 
             String line = br.readLine();
 
@@ -26,7 +29,7 @@ public class FileReader_BufferedReader {
         catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
-        finally {
+        /*finally {
             try {
                 if (br != null) {
                     br.close();
@@ -37,6 +40,6 @@ public class FileReader_BufferedReader {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
     }
 }
